@@ -1,0 +1,344 @@
+/* START BUTTON */
+
+@import 'setup';
+@font-face {
+	font-family: 'againts.oft';
+	src: url('../fonts/againts.otf');
+}
+
+$againtext: 'againts.oft', sans-serif;
+$green: #34CC83;
+$darkgreen: #0f5231;
+$lightgreen: #e5fff4;
+$butgreen: #20d98d;
+$butshadow: #179a4a;
+
+// GENERAL STYLES
+html {
+	font-size: 62.5%;
+	background-color: $green;
+
+}
+
+body {
+	font-size: 1rem;
+	color: black;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+img {
+	display: block;
+}
+
+h1,
+h2 {
+	margin: 0;
+	padding: 0;
+	color: $darkgreen;
+	font-family: $againtext;
+	display: inline-block;
+	text-align: center;
+}
+
+h1 {
+	font-size: 12rem;
+	letter-spacing: 0.3rem;
+}
+
+h2 {
+	font-size: 7rem;
+	letter-spacing: 0.5rem;
+	margin: 4% 0;
+
+	@media(max-width: 622px) {
+		font-size: 5rem;
+	}
+}
+
+h3 {
+	font-size: 1.5rem;
+	color: white;
+	letter-spacing: 0.1rem;
+	text-shadow: 0.5px 1px #024C28;
+	
+	@media(max-width: 890px) {
+			padding: 0 5px;
+		}
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+input[type=radio] {
+	display: none;
+}
+
+input[type=radio]:checked + label {
+	background-color: orange;
+	box-shadow: 0 5px 0 #DA500B;
+}
+
+input[type=submit] {
+	border: none;
+	background: orange;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	font-family: $againtext, 'Josefin Sans', sans-serif;
+	font-size: 2rem;
+	letter-spacing: 0.2rem;
+	color: white;
+	box-shadow: 2px 3px 1px rgba(0,0,0, 0.3);
+	outline: white;
+}
+
+label {
+	width: 25%;
+	margin: 0 2.5%;
+	background: $butgreen;
+	border-radius: 5px;
+	box-shadow: 0 5px 0 $butshadow;
+	cursor: url("../images/cursor.png"), auto;
+}
+
+p {
+	font-size: 2.0rem;
+	letter-spacing: 0.2rem;
+	line-height: 2.6rem;
+	font-weight: 600;
+	text-align: center;
+	padding-bottom: 100px;
+	@media(max-width: 768px) {
+		padding-bottom: 110px;
+	}
+}
+
+
+// End of generic styles
+
+
+// START BUTTON
+.background {
+	background: $green;
+	width: 100%;
+	height: 100%;
+	padding: 0 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+		@media(max-width: 440px) {
+			 padding-top: 30%;
+			 background: none;
+			 padding: 0;
+		}
+
+
+
+	.submit-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+
+		@media(max-width: 560px) {
+			padding-top: 10%;
+
+			h1 {
+				font-size: 10rem;
+			}
+		}
+
+		@media(max-width: 535px) {
+			h1 {
+				font-size: 8rem;
+			}
+		}
+	}
+
+	.start {
+		border-radius: 50%;
+		height: 500px;
+		width: 500px;
+		background-color: white;
+		border: none;
+		outline: $green;
+		box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
+
+		@media(max-width: 535px) {
+			 height: 400px;
+			 width: 400px;
+			}
+
+		@media(max-width: 440px) {
+			 height: 300px;
+			 width: 300px;
+			
+			h1 {
+				font-size: 5rem;
+			}
+		}
+			
+	}
+
+
+	.questions {
+		display: none;
+		width: 100%;
+		margin: 5% 0;
+		background-image: url("../images/shiaPattern.jpg");
+		background-repeat: repeat;
+
+		@media (max-width: 425px) {
+			margin: 0;
+		}
+	}
+
+	.appear {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.disappear {
+	display: none;
+	}
+
+}
+// Close Background
+
+.questions {
+	padding: 1% 5% 0 5%;
+	text-align: center;
+	border: 5px solid #86F1C5;
+	border-radius: 10px;
+
+	@media(max-width: 750px) {
+		padding-bottom: 5%;
+	}
+
+	@media(max-width: 440px) {
+		 border: none;
+		 border-radius: 0;
+	}
+
+	.question {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.questionContainer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 2% 0;
+
+			@media(max-width: 604px) {
+		 			flex-direction: column;
+
+		 		label {
+		 			width: 100%;
+		 			margin: 2.5% 0;
+		 		}
+			}
+		}
+
+	}
+}
+.resultContainer {
+	margin-top: 5%;
+	width: 61%;
+	position: relative;
+	align-self: baseline;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	
+	input {
+		position: absolute;
+		top: -3%;
+		right: 17%;
+	}
+	img {
+		width: 30%;
+
+	}
+
+	@media(max-width: 750px) {
+		width: 100%;
+		img{
+			display: none;
+		}
+
+		input {
+			position: static;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+.shiaSurpriseAnswer {
+	padding: 5% 5% 15%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	background-image: url("../images/shiaPattern.jpg");
+	border: 5px solid #86F1C5;
+	border-radius: 10px;
+
+	img{
+		border: 5px solid #86F1C5;
+		border-radius: 10px;
+		max-width: 100%;
+	}
+
+	@media(max-width: 440px) {
+		 border: none;
+		 border-radius: 0;
+	}
+}
+
+.playAgain-container {
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	input {
+		width: 100px;
+		height: 100px;
+		bottom: 75px;
+		left: calc(50% - 50px);
+		position: absolute;
+	}
+}
+				
+
+
+		
+// FOOTER
+
+footer {
+	background-image: url('../images/theatreseat_crop.png');
+	padding-top: 10%;
+	align-self: baseline;
+
+	@media(max-width: 1105px) {
+		margin-top: 5%;
+		}
+
+
+	@media(max-width: 743px) {
+		display: none;
+	}
+
+}
+
